@@ -1,0 +1,70 @@
+﻿@model IEnumerable<DoAnCoSo.Models.CaPhe>
+
+@{
+    ViewBag.Title = "ListCaPhe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListCaPhe</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.maloai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.math)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tencaphe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.giaban)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ngaycapnhat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soluongton)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.maloai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.math)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tencaphe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.giaban)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ngaycapnhat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.soluongton)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.macaphe }) |
+            @Html.ActionLink("Details", "Details", new { id=item.macaphe }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.macaphe })
+        </td>
+    </tr>
+}
+
+</table>
